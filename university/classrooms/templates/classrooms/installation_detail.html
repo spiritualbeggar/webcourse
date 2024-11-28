@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Установка оборудования: {{ installation.equipment.name }}</h2>
+  <p>Дата установки: {{ installation.installation_date }}</p>
+  <p>Аудитория: <a href="{% url 'room_detail' installation.room.pk %}">{{ installation.room.number }}</a></p>
+  <a href="{% url 'installation_list' %}">Назад к списку установок</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Оборудование</h2>
+  <ul>
+    {% for equipment in equipments %}
+      <li><a href="{% url 'equipment_detail' equipment.pk %}">{{ equipment.name }}</a> - {{ equipment.cost }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

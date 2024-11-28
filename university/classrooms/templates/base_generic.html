@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Университет{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Университет</h1>
+        <nav>
+            <a href="{% url 'campus_list' %}">Корпуса</a> |
+            <a href="{% url 'room_list' %}">Аудитории</a> |
+            <a href="{% url 'equipment_list' %}">Оборудование</a> |
+            <a href="{% url 'installation_list' %}">Установки</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

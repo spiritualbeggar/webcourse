@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Оборудование: {{ equipment.name }}</h2>
+  <p>Стоимость: {{ equipment.cost }}</p>
+  <p>Дата поставки: {{ equipment.supply_date }}</p>
+  <a href="{% url 'equipment_list' %}">Назад к списку оборудования</a>
+{% endblock %}

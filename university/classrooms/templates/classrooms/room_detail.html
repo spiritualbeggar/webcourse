@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Аудитория {{ room.number }}</h2>
+  <p>Этаж: {{ room.floor }}</p>
+  <p>Вместимость: {{ room.capacity }}</p>
+  <p>Стоимость: {{ room.cost }}</p>
+  <p>Площадь: {{ room.area }}</p>
+  <p>Корпус: {{ room.campus.name }}</p>
+  <p>Тип аудитории: {{ room.room_type.name }}</p>
+  <p>Подразделение: {{ room.department.name }}</p>
+  <a href="{% url 'room_list' %}">Назад к списку аудиторий</a>
+{% endblock %}

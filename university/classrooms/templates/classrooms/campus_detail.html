@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Корпус: {{ campus.name }}</h2>
+  <p>Список аудиторий:</p>
+  <ul>
+    {% for room in campus.room_set.all %}
+      <li><a href="{% url 'room_detail' room.pk %}">{{ room.number }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'campus_list' %}">Назад к списку корпусов</a>
+{% endblock %}
