@@ -2,6 +2,11 @@
 
 {% block content %}
   <h2>Аудитория {{ room.number }}</h2>
+  {% if room.photo %}
+    <img src="{{ room.photo.url }}" alt="Фото аудитории {{ room.number }}" class="card-image">
+  {% else %}
+    <p>Фото отсутствует.</p>
+  {% endif %}
   <p>Этаж: {{ room.floor }}</p>
   <p>Вместимость: {{ room.capacity }}</p>
   <p>Стоимость: {{ room.cost }}</p>

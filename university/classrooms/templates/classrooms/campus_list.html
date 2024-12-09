@@ -4,7 +4,12 @@
   <h2>Корпуса</h2>
   <ul>
     {% for campus in campuses %}
-      <li><a href="{% url 'campus_detail' campus.pk %}">{{ campus.name }}</a></li>
+      <li>
+        <a href="{% url 'campus_detail' campus.pk %}">{{ campus.name }}</a>
+        {% if campus.photo %}
+          <img src="{{ campus.photo.url }}" alt="Фото {{ campus.name }}" style="max-width: 100px; display: block;">
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 {% endblock %}

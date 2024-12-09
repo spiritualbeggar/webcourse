@@ -2,6 +2,11 @@
 
 {% block content %}
   <h2>Корпус: {{ campus.name }}</h2>
+  {% if campus.photo %}
+    <img src="{{ campus.photo.url }}" alt="Фото {{ campus.name }}" style="max-width: 400px;">
+  {% else %}
+    <p>Фото отсутствует.</p>
+  {% endif %}
   <p>Список аудиторий:</p>
   <ul>
     {% for room in campus.room_set.all %}

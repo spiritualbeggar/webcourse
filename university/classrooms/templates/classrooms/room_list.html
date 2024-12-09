@@ -7,4 +7,5 @@
       <li><a href="{% url 'room_detail' room.pk %}">Аудитория {{ room.number }} (Корпус: {{ room.campus.name }})</a></li>
     {% endfor %}
   </ul>
+  <p><a href="{% url 'add_room' %}">Добавить аудиторию</a></p>
 {% endblock %}

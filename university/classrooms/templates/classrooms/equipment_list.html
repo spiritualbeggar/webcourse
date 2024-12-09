@@ -6,5 +6,9 @@
     {% for equipment in equipments %}
       <li><a href="{% url 'equipment_detail' equipment.pk %}">{{ equipment.name }}</a> - {{ equipment.cost }}</li>
     {% endfor %}
+    {% if is_superuser %}
+    <a href="{% url 'add_equipment' %}">Добавить оборудование</a>
+    <a href="{% url 'add_room' %}">Добавить аудиторию</a>
+{% endif %}
   </ul>
 {% endblock %}

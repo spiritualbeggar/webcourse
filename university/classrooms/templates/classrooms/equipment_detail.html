@@ -4,5 +4,10 @@
   <h2>Оборудование: {{ equipment.name }}</h2>
   <p>Стоимость: {{ equipment.cost }}</p>
   <p>Дата поставки: {{ equipment.supply_date }}</p>
+  {% if equipment.photo %}
+    <img src="{{ equipment.photo.url }}" alt="Фото {{ equipment.name }}" style="max-width: 400px;">
+  {% else %}
+    <p>Фото отсутствует.</p>
+  {% endif %}
   <a href="{% url 'equipment_list' %}">Назад к списку оборудования</a>
 {% endblock %}

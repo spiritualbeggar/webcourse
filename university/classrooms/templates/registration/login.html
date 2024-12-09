@@ -1,0 +1,12 @@
+<!-- templates/registration/login.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Вход</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Отображение формы с полями username и password -->
+    <button type="submit">Войти</button>
+  </form>
+  <p>Еще нет аккаунта? <a href="{% url 'register' %}">Зарегистрируйтесь</a></p>
+{% endblock %}
